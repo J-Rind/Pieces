@@ -3,7 +3,7 @@ package com.company;
 import java.util.ArrayList;
 
 class King extends Piece {
-    public King(int[] coordinates) {
+    public King(int x, int y) {
         super(coordinates);
     }
 
@@ -18,7 +18,7 @@ class King extends Piece {
         if (surrPieces.size() > 0) {
             for (Piece surrPiece : surrPieces) { //Foreach piece in surrPieces
                 if (surrPiece.isWhite != this.isWhite) { //If piece is opposite to king
-                    if (surrPiece.getRange().contains(this.coordinates)) { //Is king in range of piece
+                    if (surrPiece.range.contains(this.coordinates)) { //Is king in range of piece
                         check = true;
                         break;
                     }
