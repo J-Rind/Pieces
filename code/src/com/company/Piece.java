@@ -2,16 +2,20 @@ package com.company;
 
 import java.security.KeyStore;
 
+
 public class Piece {
-    private int coordinate[][];
+    private int X;
+    private int Y;
     private String type;
     private Boolean isAlive;
     private Boolean isWhite;
 
-    Piece(int x, int y, String tipe, Boolean white)
+
+    Piece(int x, int y, String t, Boolean white)
     {
-        coordinate = new int[x][y];
-        type = tipe;
+        X = x;
+        Y = y;
+        type = t;
         isAlive = Boolean.TRUE;
         isWhite = white;
     }
@@ -19,7 +23,7 @@ public class Piece {
     Piece()
     {}
 
-    private void moveTo(int x, int y){} //function should change piece coordinates after error checking
+    public void moveTo(int x, int y){} //function should change piece coordinates after error checking
 
     private boolean validMove(int x, int y){return true;} //takes destination coordinates and returns a boolean indicating if a move is valid or not
 
@@ -27,6 +31,26 @@ public class Piece {
 
     private boolean kingCheck(){return true;} //returns if this move will place the current player's king in check.
 
+    public void print(){
+        System.out.println("Coordinate: (" + X + "," + Y + ")");
+        System.out.println("isWhite: " + isWhite);
+        System.out.println("Type: " + type);
+        System.out.println("Status: " + isAlive);
 
+
+
+    }
+
+    public int getX(){return X;}
+    public int getY(){return Y;}
+    public String getType(){return type;}
+    public Boolean getAlive(){return isAlive;}
+    public Boolean getColor(){return isWhite;}
+
+    public void setX(int x){X = x;}
+    public void setY(int y){Y = y;}
+    public void setType(String tipe){type = type;}
+    public void setIsAlive(Boolean s){isAlive = s;}
+    public void setIsWhite(Boolean a){isWhite = a;}
 
 }
