@@ -1,4 +1,5 @@
 package com.company;
+import java.util.ArrayList;
 
 import java.security.KeyStore;
 
@@ -9,6 +10,7 @@ public class Piece {
     private String type;
     private Boolean isAlive;
     private Boolean isWhite;
+    public ArrayList<int[]> range;
 
 
     Piece(int x, int y, String t, Boolean white)
@@ -18,6 +20,7 @@ public class Piece {
         type = t;
         isAlive = Boolean.TRUE;
         isWhite = white;
+        range = new ArrayList<>();
     }
 
     Piece()
@@ -27,9 +30,11 @@ public class Piece {
 
     private boolean validMove(int x, int y){return true;} //takes destination coordinates and returns a boolean indicating if a move is valid or not
 
-    private int getRange(){return 1;} //return type tbd, function should return the current range of movement for each piece, assuming empty board
+    public void getRange (){} //return type tbd, function should return the current range of movement for each piece, assuming empty board
 
-    private boolean kingCheck(){return true;} //returns if this move will place the current player's king in check.
+    public boolean kingCheck(){return true;} //returns if this move will place the current player's king in check.
+
+
 
     public void print(){
         System.out.println("Coordinate: (" + X + "," + Y + ")");
@@ -40,6 +45,24 @@ public class Piece {
 
 
     }
+
+    public int getPiece(int dX, int dY,ArrayList<Piece> arr)
+    {
+        for (int i =0; i < arr.size(); i++){
+            if (arr.get(i).getX() == dX && arr.get(i).getY() == dY )
+            {
+                if (arr.get(i).getColor() == this.isWhite)
+                {return 1;}
+                else {return 2;}
+            }
+
+
+        }
+        return 0;
+
+    }
+
+
 
     public int getX(){return X;}
     public int getY(){return Y;}
