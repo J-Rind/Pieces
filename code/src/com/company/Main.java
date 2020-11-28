@@ -84,11 +84,21 @@ public class Main {
         System.out.println("---------");
 
 
-
-        Rook test = new Rook(6,9,"RooK", true);
+        Rook test = new Rook(4,4,"Rook", true);
         test.getRange(pieces);
+        ArrayList<int[]> testRange = new ArrayList<int[]>();
+        testRange = test.range;
 
-        System.out.println("test" + test.range);
+        System.out.println("test");
+        for (int i = 0; i<testRange.size(); i++)
+        {
+            int[] xtest = testRange.get(i);
+            for (int j = 0; j < xtest.length; j++)
+            {
+                System.out.println(xtest[j]);
+            }
+        }
+        test.
 
 
 
