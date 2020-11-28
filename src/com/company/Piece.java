@@ -2,7 +2,6 @@ package com.company;
 
 import java.security.KeyStore;
 
-
 public class Piece {
     private int X;
     private int Y;
@@ -28,7 +27,7 @@ public class Piece {
     private boolean validMove(int x, int y){return true;} //takes destination coordinates and returns a boolean indicating if a move is valid or not
 
     //private int getPiece(int x,int y) {return 0, 1, 2}
-    private int getRange(){return 1;} //return type tbd, function should return the current range of movement for each piece, assuming empty board
+    public void getRange(){} //return type tbd, function should return the current range of movement for each piece, assuming empty board
 
     private boolean kingCheck(){return true;} //returns if this move will place the current player's king in check.
 

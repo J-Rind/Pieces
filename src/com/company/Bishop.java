@@ -1,7 +1,7 @@
 package com.company;
 import java.util.ArrayList;
 
-public class Rook extends Piece {
+public class Bishop extends Piece {
 
 
     private int X;
@@ -10,9 +10,9 @@ public class Rook extends Piece {
     //private int getPiece(int x,int y) {return 0, 1, 2}
 
 
-    private int getRange(){
+    public void getRange(){
 
-        for (int x = this.X, y = this.Y; x < 8 && y < 8; x++, y++) {
+        for (int x = this.X + 1, y = this.Y + 1; x < 8 && y < 8; x++, y++) {
             if (getPiece(x,y) == 0) {
                 range.add(new int[] {x,y});
             }
@@ -25,7 +25,7 @@ public class Rook extends Piece {
             }
         }
 
-        for (int x = this.X, y = this.Y; x < 8 && y < 8; x--, y++) {
+        for (int x = this.X - 1, y = this.Y + 1; x < 8 && y < 8; x--, y++) {
             if (getPiece(x,y) == 0) {
                 range.add(new int[] {x,y});
             }
@@ -38,7 +38,7 @@ public class Rook extends Piece {
             }
         }
 
-        for (int x = this.X, y = this.Y; x < 8 && y < 8; x++, y--) {
+        for (int x = this.X + 1, y = this.Y - 1; x < 8 && y < 8; x++, y--) {
             if (getPiece(x,y) == 0) {
                 range.add(new int[] {x,y});
             }
@@ -51,7 +51,7 @@ public class Rook extends Piece {
             }
         }
 
-        for (int x = this.X, y = this.Y; x < 8 && y < 8; x--, y--) {
+        for (int x = this.X - 1, y = this.Y - 1; x < 8 && y < 8; x--, y--) {
             if (getPiece(x, y) == 0) {
                 range.add(new int[]{x, y});
             } else if (getPiece(x, y) == 1) {
@@ -61,7 +61,5 @@ public class Rook extends Piece {
                 break;
             }
         }
-
-        return 1;
     }
 }
