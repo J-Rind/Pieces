@@ -19,6 +19,7 @@ public class Piece {
         type = t;
         isAlive = Boolean.TRUE;
         isWhite = white;
+        range = new ArrayList<>();
     }
 
     Piece()
@@ -33,19 +34,17 @@ public class Piece {
                     setY(y);
                     System.out.println("Piece Moved to: (" + x + "," + y + ")");
                 }
-        }else{System.out.println("Invalid move");}*/
+        }else{System.out.println("Invalid move");}
 
 
 
-    } //function should change piece coordinates after error checking
+    } //function should change piece coordinates after error checking*/
 
 
 
     public void getRange (){} //return type tbd, function should return the current range of movement for each piece, assuming empty board
 
-    private boolean kingCheck(){return true;} //returns if this move will place the current player's king in check.
-
-
+    public boolean kingCheck(){return true;} //returns if this move will place the current player's king in check.
 
     public void print(){
         System.out.println("Coordinate: (" + X + "," + Y + ")");
@@ -73,8 +72,6 @@ public class Piece {
 
     }
 
-
-
     public int getX(){return X;}
     public int getY(){return Y;}
     public String getType(){return type;}
@@ -86,5 +83,4 @@ public class Piece {
     public void setType(String tipe){type = type;}
     public void setIsAlive(Boolean s){isAlive = s;}
     public void setIsWhite(Boolean a){isWhite = a;}
-
 }
