@@ -3,10 +3,14 @@ package com.company;
 import java.util.ArrayList;
 
 import java.security.PublicKey;
+import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
+        ArrayList<Piece> pieces = new ArrayList<Piece>();
+        int[] xCoor = new int[0];
+
         Piece wPawn1 = new Piece(0,1,"Pawn",true);
         Piece wPawn2 = new Piece(1,1,"Pawn",true);
         Piece wPawn3 = new Piece(2,1,"Pawn",true);
@@ -41,7 +45,6 @@ public class Main {
         Piece bKing = new Piece(5,7,"King",false);
         Piece bQueen = new Piece(4,7,"Queen",false);
 
-        ArrayList<Piece> pieces = new ArrayList<Piece>();
         pieces.add(wPawn1);
         pieces.add(wPawn2);
         pieces.add(wPawn3);
@@ -76,9 +79,16 @@ public class Main {
         pieces.add(bKing);
         pieces.add(bQueen);
 
-        for (int i =0; i < pieces.size(); i++){
-            pieces.get(i).print();
-        }
+
+        System.out.println("getpiece test: " + bPawn1.getPiece(6,6,pieces));
+        System.out.println("---------");
+
+
+
+        Rook test = new Rook(6,9,"RooK", true);
+        test.getRange(pieces);
+
+        System.out.println("test" + test.range);
 
 
 
