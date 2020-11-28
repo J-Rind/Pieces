@@ -10,7 +10,7 @@ public class Piece {
     private String type;
     private Boolean isAlive;
     private Boolean isWhite;
-
+    public ArrayList<int[]> range = new ArrayList<>();
 
     Piece(int x, int y, String t, Boolean white)
     {
@@ -24,9 +24,22 @@ public class Piece {
     Piece()
     {}
 
-    public void moveTo(int x, int y){} //function should change piece coordinates after error checking
+    /*public void moveTo(int x, int y, King king, ArrayList<Piece> arr){
+        if (range.contains()) //TO DO: fix contains function
+        {
+            if(king.kingCheck(arr) == false)
+                {
+                    setX(x);
+                    setY(y);
+                    System.out.println("Piece Moved to: (" + x + "," + y + ")");
+                }
+        }else{System.out.println("Invalid move");}*/
 
-    private boolean validMove(int x, int y){return true;} //takes destination coordinates and returns a boolean indicating if a move is valid or not
+
+
+    } //function should change piece coordinates after error checking
+
+
 
     public void getRange (){} //return type tbd, function should return the current range of movement for each piece, assuming empty board
 
