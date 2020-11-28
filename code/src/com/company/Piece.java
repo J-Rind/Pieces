@@ -1,4 +1,5 @@
 package com.company;
+import java.util.ArrayList;
 
 import java.security.KeyStore;
 
@@ -40,6 +41,24 @@ public class Piece {
 
 
     }
+
+    public int getPiece(int dX, int dY,ArrayList<Piece> arr)
+    {
+        for (int i =0; i < arr.size(); i++){
+            if (arr.get(i).getX() == dX && arr.get(i).getY() == dY )
+            {
+                if (arr.get(i).getColor() == this.isWhite)
+                {return 1;}
+                else {return 2;}
+            }
+
+
+        }
+        return 0;
+
+    }
+
+
 
     public int getX(){return X;}
     public int getY(){return Y;}
