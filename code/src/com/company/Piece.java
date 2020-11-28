@@ -28,9 +28,11 @@ public class Piece {
 
     private boolean validMove(int x, int y){return true;} //takes destination coordinates and returns a boolean indicating if a move is valid or not
 
-    private int getRange(){return 1;} //return type tbd, function should return the current range of movement for each piece, assuming empty board
+    public void getRange (){} //return type tbd, function should return the current range of movement for each piece, assuming empty board
 
     private boolean kingCheck(){return true;} //returns if this move will place the current player's king in check.
+
+
 
     public void print(){
         System.out.println("Coordinate: (" + X + "," + Y + ")");

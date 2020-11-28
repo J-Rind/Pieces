@@ -25,7 +25,7 @@ public class Rook extends Piece {
     public void getRange(ArrayList<Piece> arr){
 
         for (int x = this.X + 1, y = this.Y; x < 8; x++) {
-            System.out.println("ye");
+
             if (getPiece(x,y, arr) == 0) {
                 range.add(new int[] {x,y});
             }
@@ -38,8 +38,8 @@ public class Rook extends Piece {
             }
         }
 
-        for (int x = this.X - 1, y = this.Y; x < 8; x--) {
-            System.out.println("ye");
+        for (int x = this.X - 1, y = this.Y; x > -1; x--) {
+
             if (getPiece(x,y,arr) == 0) {
                 range.add(new int[] {x,y});
             }
@@ -53,7 +53,7 @@ public class Rook extends Piece {
         }
 
         for (int x = this.X, y = this.Y + 1; y < 8; y++) {
-            System.out.println("ye");
+
             if (getPiece(x,y,arr) == 0) {
                 range.add(new int[] {x,y});
             }
@@ -66,8 +66,7 @@ public class Rook extends Piece {
             }
         }
 
-        for (int x = this.X, y = this.Y - 1; y < 8; y--) {
-            System.out.println("ye");
+        for (int x = this.X, y = this.Y - 1; y > -1; y--) {
             if (getPiece(x, y,arr) == 0) {
                 range.add(new int[]{x, y});
             } else if (getPiece(x, y,arr) == 1) {
