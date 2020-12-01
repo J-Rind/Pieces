@@ -2,13 +2,11 @@ package com.company;
 
 import java.util.ArrayList;
 
-import java.security.PublicKey;
-import java.util.List;
-
 public class Main {
 
     public static void main(String[] args) {
         ArrayList<Piece> pieces = new ArrayList<Piece>();
+
 
         /*Piece wPawn1 = new Piece(0,1,"Pawn",true);
         Piece wPawn2 = new Piece(1,1,"Pawn",true);
@@ -87,9 +85,4 @@ public class Main {
 
 
 
-
-
-
-
-    }
 }
