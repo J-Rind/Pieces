@@ -24,20 +24,44 @@ public class Piece {
     Piece()
     {}
 
-    /*public void moveTo(int x, int y, King king, ArrayList<Piece> arr){
-        if (range.contains()) //TO DO: fix contains function
-        {
-            if(king.kingCheck(arr) == false)
+    /*public void moveTo(int x, int y, King myKing, ArrayList<Piece> arr){
+
+        int[] myCoords = new int[]{this.getX(), this.getY()};
+        int moved = 0;
+
+
+        for (int[] coordinate : this.range) {
+            if (coordinate[0] == myCoords[0] && coordinate[1] == myCoords[1])
                 {
-                    setX(x);
-                    setY(y);
+                    this.setX(x);
+                    this.setY(y);
                     System.out.println("Piece Moved to: (" + x + "," + y + ")");
+
+                    moved++;
+                    break;
                 }
-        }else{System.out.println("Invalid move");}*/
+        }
+
+        if(moved != 1)
+        {
+            System.out.println("piece not moved, not in range");
+        }
 
 
 
-    } //function should change piece coordinates after error checking
+
+
+            if(myKing.kingCheck(arr) == false) //this is the fucntion for king check, this needs quite a bit more work.
+            {
+            this.setX(x);
+            this.setY(y);
+            System.out.println("Piece Moved to: (" + x + "," + y + ")");
+            }else{
+                System.out.println("invalid move, king is in check");
+                }
+
+
+    } //function should change piece coordinates after error checking*/
 
 
 
