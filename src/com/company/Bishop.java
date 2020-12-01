@@ -9,57 +9,56 @@ public class Bishop extends Piece {
     private ArrayList<int[]> range = new ArrayList<>();
     //private int getPiece(int x,int y) {return 0, 1, 2}
 
-
-    public void getRange(){
-
-        for (int x = this.X + 1, y = this.Y + 1; x < 8 && y < 8; x++, y++) {
-            if (getPiece(x,y) == 0) {
+    public void getRange(ArrayList<Piece> arr){
+        for (int x = this.getX() + 1, y = this.getY() + 1; x < 8 && y < 8; x++, y++) {
+            if (getPiece(x,y, arr) == 0) {
                 range.add(new int[] {x,y});
             }
-            else if (getPiece(x,y) == 1) {
+            else if (getPiece(x,y, arr) == 1) {
                 break;
             }
-            else if (getPiece(x,y) == 2) {
+            else if (getPiece(x,y, arr) == 2) {
                 range.add(new int[] {x,y});
                 break;
             }
         }
 
-        for (int x = this.X - 1, y = this.Y + 1; x < 8 && y < 8; x--, y++) {
-            if (getPiece(x,y) == 0) {
+        for (int x = this.getX() - 1, y = this.getY() + 1; x > -1 && y < 8; x--, y++) {
+            if (getPiece(x,y,arr) == 0) {
                 range.add(new int[] {x,y});
             }
-            else if (getPiece(x,y) == 1) {
+            else if (getPiece(x,y,arr) == 1) {
                 break;
             }
-            else if (getPiece(x,y) == 2) {
-                range.add(new int[] {x,y});
-                break;
-            }
-        }
-
-        for (int x = this.X + 1, y = this.Y - 1; x < 8 && y < 8; x++, y--) {
-            if (getPiece(x,y) == 0) {
-                range.add(new int[] {x,y});
-            }
-            else if (getPiece(x,y) == 1) {
-                break;
-            }
-            else if (getPiece(x,y) == 2) {
+            else if (getPiece(x,y,arr) == 2) {
                 range.add(new int[] {x,y});
                 break;
             }
         }
 
-        for (int x = this.X - 1, y = this.Y - 1; x < 8 && y < 8; x--, y--) {
-            if (getPiece(x, y) == 0) {
+        for (int x = this.getX() + 1, y = this.getY() - 1; x < 8 && y > -1; x++, y--) {
+            if (getPiece(x,y,arr) == 0) {
+                range.add(new int[] {x,y});
+            }
+            else if (getPiece(x,y,arr) == 1) {
+                break;
+            }
+            else if (getPiece(x,y,arr) == 2) {
+                range.add(new int[] {x,y});
+                break;
+            }
+        }
+
+        for (int x = this.getX() - 1, y = this.getY() - 1; x > -1 && y > -1; x--, y--) {
+            if (getPiece(x, y,arr) == 0) {
                 range.add(new int[]{x, y});
-            } else if (getPiece(x, y) == 1) {
+            } else if (getPiece(x, y,arr) == 1) {
                 break;
-            } else if (getPiece(x, y) == 2) {
+            } else if (getPiece(x, y,arr) == 2) {
                 range.add(new int[]{x, y});
                 break;
             }
         }
     }
+
 }
