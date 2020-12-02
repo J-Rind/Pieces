@@ -2,8 +2,6 @@ package com.company;
 import java.util.ArrayList;
 
 public class Rook extends Piece {
-
-
     private int X;
     private int Y;
     private ArrayList<int[]> range = new ArrayList<>();
