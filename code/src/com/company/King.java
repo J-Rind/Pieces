@@ -27,8 +27,4 @@ class King extends Piece {
         }
         return check;
     }
-
-
 }
-
-
