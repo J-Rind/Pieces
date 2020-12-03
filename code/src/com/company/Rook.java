@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Rook extends Piece {
     public Rook(int x, int y, String t, Boolean white) {
         super(x, y, t, white);
+        super.getRange();
     }
 
     public void getRange(ArrayList<Piece> arr){
