@@ -20,6 +20,7 @@ public abstract class Piece {
         type = t;
         isAlive = Boolean.TRUE;
         isWhite = white;
+        range = new ArrayList<>();
     }
 
     Piece()
@@ -48,7 +49,6 @@ public abstract class Piece {
                     moved++;
                     break;
                 }
-        }
 
         updateRange(arr);
 
@@ -73,9 +73,7 @@ public abstract class Piece {
     public abstract void getRange (ArrayList<Piece> arr) //return type tbd, function should return the current range of movement for each piece, assuming empty board
     ;
 
-    private boolean kingCheck(){return true;} //returns if this move will place the current player's king in check.
-
-
+    public boolean kingCheck(){return true;} //returns if this move will place the current player's king in check.
 
     public void print(){
         System.out.println("Coordinate: (" + X + "," + Y + ")");
@@ -103,8 +101,6 @@ public abstract class Piece {
 
     }
 
-
-
     public int getX(){return X;}
     public int getY(){return Y;}
     public String getType(){return type;}
@@ -116,5 +112,4 @@ public abstract class Piece {
     public void setType(String tipe){type = type;}
     public void setIsAlive(Boolean s){isAlive = s;}
     public void setIsWhite(Boolean a){isWhite = a;}
-
 }
