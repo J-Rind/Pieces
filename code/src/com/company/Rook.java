@@ -9,8 +9,7 @@ public class Rook extends Piece {
         super(x, y, t, white);
     }
 
-
-
+    @Override
     public void getRange(ArrayList<Piece> arr){
         for (int x = this.getX() + 1, y = this.getY(); x < 8; x++) {
             if (getPiece(x,y, arr) == 0) {
@@ -63,27 +62,5 @@ public class Rook extends Piece {
         }
     }
 
-    public void moveTo(int x, int y, King myKing, ArrayList<Piece> arr){
 
-        int[] myCoords = new int[]{this.getX(), this.getY()};
-        int moved = 0;
-
-
-        for (int[] coordinate : this.range) {
-            if (coordinate[0] == x && coordinate[1] == y)
-            {
-                this.setX(x);
-                this.setY(y);
-                System.out.println("Piece Moved to: (" + x + "," + y + ")");
-
-                moved++;
-                break;
-            }
-        }
-
-        if(moved != 1)
-        {
-            System.out.println("piece not moved, not in range");
-        }
-
-    }}
+}
