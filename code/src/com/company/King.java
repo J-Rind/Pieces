@@ -7,24 +7,45 @@ class King extends Piece {
         super(x, y, t, white);
     }
 
-    // Params:
-    // ArrayList<Piece> pieces: An ArrayList of all the pieces on the board
-    // Returns:
-    // boolean check: true = in-check; false = out-of-check
-    public boolean kingCheck(ArrayList<Piece> pieces) {
-        boolean check = false;
-        int[] kingCoords = new int[]{this.getX(), this.getY()};
+    @Override
+    public void getRange(ArrayList<Piece> pieces){
+        this.range.clear();
+        int  pieceX = this.getX(); int pieceY = this.getY(); // X and Y coordinates for the king piece
 
-        for (Piece piece : pieces) {
-            if (piece.getColor() != this.getColor()) {
-                for (int[] coordinate : piece.range) {
-                    if (coordinate[0] == kingCoords[0] && coordinate[1] == kingCoords[1]) {
-                        check = true;
-                        break;
-                    }
-                }
-            }
-        }
-        return check;
+        //Up
+        if (this.getPiece(pieceX, pieceY+1, pieces) == 0 || this.getPiece(pieceX, pieceY+1, pieces) == 2)
+            this.range.add(new int[] {pieceX, pieceY+1});
+
+        //Up-right
+        if (this.getPiece(pieceX+1, pieceY+1, pieces) == 0 || this.getPiece(pieceX+1, pieceY+1, pieces) == 2)
+            this.range.add(new int[] {pieceX+1, pieceY+1});
+
+        //Right
+        if (this.getPiece(pieceX+1, pieceY, pieces) == 0 || this.getPiece(pieceX+1, pieceY, pieces) == 2)
+            this.range.add(new int[] {pieceX+1, pieceY});
+
+        //Down-right
+        if (this.getPiece(pieceX+1, pieceY-1, pieces) == 0 || this.getPiece(pieceX+1, pieceY-1, pieces) == 2)
+            this.range.add(new int[] {pieceX+1, pieceY-1});
+
+        //Down
+        if (this.getPiece(pieceX, pieceY-1, pieces) == 0 || this.getPiece(pieceX, pieceY-1, pieces) == 2)
+            this.range.add(new int[] {pieceX, pieceY-1});
+
+        //Down-left
+        if (this.getPiece(pieceX-1, pieceY-1, pieces) == 0 || this.getPiece(pieceX-1, pieceY-1, pieces) == 2)
+            this.range.add(new int[] {pieceX-1, pieceY-1});
+
+        //Left
+        if (this.getPiece(pieceX-1, pieceY, pieces) == 0 || this.getPiece(pieceX-1, pieceY, pieces) == 2)
+            this.range.add(new int[] {pieceX-1, pieceY});
+
+        //Up-left
+        if (this.getPiece(pieceX-1, pieceY+1, pieces) == 0 || this.getPiece(pieceX-1, pieceY+1, pieces) == 2)
+            this.range.add(new int[] {pieceX-1, pieceY+1});
+    }
+
+    public boolean kingCheck(ArrayList<Piece> pieces) {
+        return true;
     }
 }
