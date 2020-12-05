@@ -20,9 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3cac255f-897f-4a51-a8c0-1f36795a2d42" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Piece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Rook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Rook.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,10 +128,11 @@
     </state>
     <state width="2517" height="492" key="GridCell.Tab.1.right/-1920.0.1920.1040/2560.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1606789155371" />
     <state width="2517" height="492" key="GridCell.Tab.1.right/2560.0.1920.1040/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607198885116" />
-    <state x="1097" y="613" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606784572556">
+    <state x="1097" y="613" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607201210063">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1097" y="613" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1920.1040/2560.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1606784572556" />
+    <state x="1097" y="613" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/2560.0.1920.1040/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607201210063" />
     <state x="847" y="428" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1607198642724">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -143,12 +143,12 @@
       <breakpoints>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/Rook.java</url>
-          <line>62</line>
+          <line>59</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/Rook.java</url>
-          <line>63</line>
+          <line>60</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
