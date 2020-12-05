@@ -1,10 +1,8 @@
 package com.company;
 import java.util.ArrayList;
 
-import java.security.KeyStore;
 
-
-public class Piece {
+public abstract class Piece {
     private int X;
     private int Y;
     private String type;
@@ -25,16 +23,43 @@ public class Piece {
     Piece()
     {}
 
-    /*public void moveTo(int x, int y, King king, ArrayList<Piece> arr){
-        if (range.contains()) //TO DO: fix contains function
+    public void updateRange(ArrayList<Piece> arr){
+        for(int i = 0;i < arr.size(); i++){
+            arr.get(i).getRange(arr);
+        }
+    }
+
+    public void moveTo(int x, int y, King myKing, ArrayList<Piece> arr){
+
+        int[] myCoords = new int[]{this.getX(), this.getY()};
+        int moved = 0;
+
+        updateRange(arr);
+
+        for (int[] coordinate : this.range) {
+            if (coordinate[0] == x && coordinate[1] == y) {
+                this.setX(x);
+                this.setY(y);
+                System.out.println("Piece Moved to: (" + x + "," + y + ")");
+
+                moved++;
+                break;
+            }
+        }
+
+        updateRange(arr);
+
+        if (myKing.kingCheck(arr) == true)
         {
-            if(king.kingCheck(arr) == false)
-                {
-                    setX(x);
-                    setY(y);
-                    System.out.println("Piece Moved to: (" + x + "," + y + ")");
-                }
-        }else{System.out.println("Invalid move");}
+            System.out.println("!! king is in check, moving piece back !!");
+            this.setX(myCoords[0]);
+            this.setY(myCoords[1]);
+        }
+
+        if(moved != 1)
+        {
+            System.out.println("piece not moved, not in range");
+        }
 
 
 
@@ -42,7 +67,7 @@ public class Piece {
 
 
 
-    public void getRange (){} //return type tbd, function should return the current range of movement for each piece, assuming empty board
+    public abstract void getRange(ArrayList<Piece> arr); //return type tbd, function should return the current range of movement for each piece, assuming empty board
 
     public boolean kingCheck(){return true;} //returns if this move will place the current player's king in check.
 
