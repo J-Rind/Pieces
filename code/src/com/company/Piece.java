@@ -1,8 +1,5 @@
 package com.company;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-
-import java.security.KeyStore;
 
 
 public abstract class Piece {
@@ -40,15 +37,15 @@ public abstract class Piece {
         updateRange(arr);
 
         for (int[] coordinate : this.range) {
-            if (coordinate[0] == x && coordinate[1] == y)
-                {
-                    this.setX(x);
-                    this.setY(y);
-                    System.out.println("Piece Moved to: (" + x + "," + y + ")");
+            if (coordinate[0] == x && coordinate[1] == y) {
+                this.setX(x);
+                this.setY(y);
+                System.out.println("Piece Moved to: (" + x + "," + y + ")");
 
-                    moved++;
-                    break;
-                }
+                moved++;
+                break;
+            }
+        }
 
         updateRange(arr);
 
@@ -70,8 +67,7 @@ public abstract class Piece {
 
 
 
-    public abstract void getRange (ArrayList<Piece> arr) //return type tbd, function should return the current range of movement for each piece, assuming empty board
-    ;
+    public abstract void getRange(ArrayList<Piece> arr); //return type tbd, function should return the current range of movement for each piece, assuming empty board
 
     public boolean kingCheck(){return true;} //returns if this move will place the current player's king in check.
 
