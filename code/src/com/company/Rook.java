@@ -1,13 +1,18 @@
 package com.company;
 import java.util.ArrayList;
 
-public class Rook extends Piece {
-    private int X;
-    private int Y;
-    private ArrayList<int[]> range = new ArrayList<>();
-    //private int getPiece(int x,int y) {return 0, 1, 2}
 
+public class Rook extends Piece {
+
+
+    public Rook(int x, int y, String t, Boolean white) {
+        super(x, y, t, white);
+    }
+
+    @Override
     public void getRange(ArrayList<Piece> arr){
+        range.clear();
+
         for (int x = this.getX() + 1, y = this.getY(); x < 8; x++) {
             if (getPiece(x,y, arr) == 0) {
                 range.add(new int[] {x,y});
@@ -58,5 +63,4 @@ public class Rook extends Piece {
             }
         }
     }
-
 }
