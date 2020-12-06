@@ -11,7 +11,7 @@ public class Bishop extends Piece {
 
     @Override
     public void getRange(ArrayList<Piece> arr){
-        range.clear();
+        this.range.clear();
 
         for (int x = this.getX() + 1, y = this.getY() + 1; x < 8 && y < 8; x++, y++) {
             if (getPiece(x,y, arr) == 0) {

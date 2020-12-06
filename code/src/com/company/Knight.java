@@ -11,7 +11,7 @@ public class Knight extends Piece {
 
     @Override
     public void getRange(ArrayList<Piece> arr){
-        range.clear();
+        this.range.clear();
 
         int X = this.getX();
         int Y = this.getY();

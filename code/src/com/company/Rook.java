@@ -11,7 +11,7 @@ public class Rook extends Piece {
 
     @Override
     public void getRange(ArrayList<Piece> arr){
-        range.clear();
+        this.range.clear();
 
         for (int x = this.getX() + 1, y = this.getY(); x < 8; x++) {
             if (getPiece(x,y, arr) == 0) {
