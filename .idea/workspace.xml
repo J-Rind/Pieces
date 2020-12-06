@@ -78,15 +78,4 @@
     </state>
     <state x="869" y="98" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1607216536301" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/code/src/com/company/Rook.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
 </project>
