@@ -1,0 +1,88 @@
+[Game Interface]
+- Responsible for showing the interface and keeping score.
+- Allows user to interact with the board and pieces.
+
+[Board]
+- Keeps track of games pieces
+- Keeps track of move history
+- Keeps track of game state [check, checkmate, captured pieces]
+- Handles logic to move pieces around and remove pieces from the board once captured.
+- Handles logic to transform pawns into other pieces upon reaching other end
+
+[Piece]
+- Shows available moves (based on state)
+- Track piece state (captured, color, type)
+
+
+==============================================================================================================================================================================================
+
+
+enum CheckType
+	WHITE_CHECK, BLACK_CHECK, NO_CHECK
+
+enum PieceColor
+	WHITE, BLACK
+
+enum PieceType
+	PAWN, BISHOP, KNIGHT, ROOK, QUEEN, KING
+
+enum CastleType
+	QUEEN_SIDE, KING_SIDE
+
+
+class Piece
+	Boolean captured							// tracks if current piece is "captured" or not
+	PieceColor color 							// tracks which side the current piece belongs to
+	PieceType type 								// tracks the type of piece
+
+	getValidMoves(Square[] squares) -> Move[]   				// returns a list of all possible moves for the current piece when given a snapshot of the game grid
+										// This function does NOT take into account restrictions due to Checks or special moves like En Passant, Castling, or Promotion
+
+class Square
+	Piece currentPiece 							// the current piece on this square
+	Int x 									// current x
+	Int y 									// current y
+
+
+class Move
+	Piece currentPiece							// the piece involved in this move
+	Square square 								// Where the piece was moved
+	Piece capturedPiece							// the piece that was captured as a result of this move (null if nothing captured)
+	PieceType promotion 							// if a pawn was promoted due to this move, this variable tracks the user's promotion choice (null if nothing promoted)
+	CastleType castle 							// if castling occurred, indicate which side
+	Boolean enPassantCapture  						// tracks if the current move is an en Passant captured. (Required so rewinding moves works properly)
+	CheckType check 							// tracks if current move placed either side into check or removed check
+
+	printMove() -> String 							// this function prints the current move as valid chess notation
+
+
+class Board
+	Square[] squares							// 2d array of squares to represent our 8x8 game grid
+	Piece[] pieces								// list of all 32 white and black pieces on the board
+	Move[] moveHistory							// list of "moves" to keep track of move history
+	CheckType check								// enum to indicate which side (if any) is currently in check
+	Boolean checkmate							// track if game is over
+
+	resetBoard() -> Nothing							// function that initializes the squares and places all pieces in their starting positions
+										// this function should also reset the move history for a new game
+
+	addMove(Move m) -> Nothing						// function that moves a pieces to a desired x,y coordinate.
+										// this function should also implement logic to "capture" the piece on s if s is not empty
+										// this function should add the move to the moveHistory when complete
+										// this function should update the check variable if either side was placed in check due to this move (or check was removed)
+
+	undoMove() -> Nothing 							// this function pops the last move off the moveHistory stack and performs the necessary board actions to reverse it.
+	 									// this function has special logic to handle undoing special moves such as Promotion, Castling, En Passant
+
+	registerCastle(Move k, Move r) -> Nothing				// Castling is unique in that two pieces change position in the same "move": k = King, r = Rook.
+										// this function implements the logic to move both pieces at the same time
+
+	getBoard() -> Square[]							// returns all the squares so the user can see the current state of the game (used by UI)
+
+	getPossibleMoves(Square s) -> Move[]					// returns a list of all the possible moves for the piece on Square s (used by UI)
+										// this function should also take into account any restrictions on movement due to an active check and support En Passant
+										// IMPLEMENTATION NOTE:
+										//	- this function works by calling the getValidMoves() function on the piece to get a naive list of available moves.
+										//	- If the current piece is a pawn, check to see if En Passant is available and add it to the list of available moves if yes
+										//  	- If the current piece is a king, check to see if a Castle on either side is available and add it to the list of available moves if yes
+										//	- If there is a check placed on the current side, this list of moves needs to be filtered to just the ones that break the check
