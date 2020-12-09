@@ -2,7 +2,7 @@ package com.company;
 import java.util.ArrayList;
 
 
-public abstract class Piece {
+public class Piece {
     private int X;
     private int Y;
     private String type;
@@ -67,7 +67,7 @@ public abstract class Piece {
 
 
 
-    public abstract void getRange(ArrayList<Piece> arr); //return type tbd, function should return the current range of movement for each piece, assuming empty board
+    public void getRange(ArrayList<Piece> arr){}; //return type tbd, function should return the current range of movement for each piece, assuming empty board
 
     public boolean kingCheck(){return true;} //returns if this move will place the current player's king in check.
 
