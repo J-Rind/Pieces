@@ -1,4 +1,3 @@
-# Pieces
 package pieces;
 public class Pawn extends Piece {
 
@@ -49,7 +48,7 @@ public class Pawn extends Piece {
         }
 
         // This if for normal pawn captures.
-        // this is for Enpassant.
+        
 
         return false;
     }
@@ -69,4 +68,4 @@ public class Pawn extends Piece {
         return path;
     }
 
-    
+}

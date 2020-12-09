@@ -65,8 +65,6 @@ public class Piece {
 
     } //function should change piece coordinates after error checking*/
 
-
-
     public void getRange(ArrayList<Piece> arr){}; //return type tbd, function should return the current range of movement for each piece, assuming empty board
 
     public boolean kingCheck(){return true;} //returns if this move will place the current player's king in check.
