@@ -27,8 +27,14 @@ public class Main {
         pieces.add(bKing);
         pieces.add(wKing);
 
+        wKing.moveTo(3,0,wKing,pieces);
+        bRook1.moveTo(3,7,bKing,pieces);
+        if (wKing.kingCheck(pieces))
+            System.out.println("White king in check!");
 
-        wRook1.moveTo(0,5,wKing,pieces);
+        wKing.moveTo(4,0,wKing,pieces);
+        wRook2.moveTo(5,0,wKing,pieces);
+        bKing.moveTo(5,7,bKing,pieces);
 
 
 
