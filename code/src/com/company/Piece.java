@@ -23,7 +23,7 @@ public class Piece {
     Piece()
     {}
 
-    public void updateRange(ArrayList<Piece> arr){
+    public static void updateRange(ArrayList<Piece> arr){
         for(int i = 0;i < arr.size(); i++){
             arr.get(i).getRange(arr);
         }

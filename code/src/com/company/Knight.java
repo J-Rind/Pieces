@@ -15,7 +15,7 @@ public class Knight extends Piece {
 
         int X = this.getX();
         int Y = this.getY();
-        
+
         // 2-up/1-right
         if(getPiece(X + 1, Y + 2, arr) == 0 || getPiece(X + 1, Y + 2, arr) == 1){
             this.range.add(new int[] {X+1,Y+2});
