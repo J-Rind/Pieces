@@ -65,7 +65,7 @@ public class Piece {
 
     } //function should change piece coordinates after error checking*/
 
-    public void getRange(ArrayList<Piece> arr){}; 
+    public void getRange(ArrayList<Piece> arr){};
 
     public boolean kingCheck(){return true;} //returns if this move will place the current player's king in check.
 
