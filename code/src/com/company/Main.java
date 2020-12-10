@@ -17,6 +17,7 @@ public class Main {
         Rook bRook1 = new Rook(0,7,"Rook",false);
         Rook bRook2 = new Rook(7,7,"Rook",false);
         King bKing = new King(4,7,"King",false);
+        Bishop wBishop1 = new Bishop(3,0,"Bishop",true);
 
 
 
