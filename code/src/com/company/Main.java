@@ -56,8 +56,15 @@ public class Main {
 
         System.out.println("===End Test==");
 
+        System.out.println("===Black Pawn===");
         blackPawn1.moveTo(6,4,bKing,pieces);
+        blackPawn1.moveTo(6,2,bKing,pieces);
+        System.out.println("===End Black Pawn===");
+
+        System.out.println("===White Pawn===");
         whitePawn1.moveTo(1,3,wKing,pieces);
+        whitePawn1.moveTo(1,5,wKing,pieces);
+        System.out.println("===End White Pawn===");
 
         wKing.moveTo(3,0,wKing,pieces);
         bRook1.moveTo(3,7,bKing,pieces);

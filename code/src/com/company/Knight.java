@@ -17,35 +17,35 @@ public class Knight extends Piece {
         int Y = this.getY();
 
         // 2-up/1-right
-        if(getPiece(X + 1, Y + 2, arr) == 0 || getPiece(X + 1, Y + 2, arr) == 1){
+        if(getPiece(X + 1, Y + 2, arr) == 0 || getPiece(X + 1, Y + 2, arr) == 2){
             this.range.add(new int[] {X+1,Y+2});
         }
         // 1-up/2-right
-        if(getPiece(X + 2, Y + 1, arr) == 0 || getPiece(X + 2, Y + 1, arr) == 1){
+        if(getPiece(X + 2, Y + 1, arr) == 0 || getPiece(X + 2, Y + 1, arr) == 2){
             this.range.add(new int[] {X+2,Y+1});
         }
         // 1-down/2-right
-        if(getPiece(X + 2, Y - 1, arr) == 0 || getPiece(X + 2, Y - 1, arr) == 1){
+        if(getPiece(X + 2, Y - 1, arr) == 0 || getPiece(X + 2, Y - 1, arr) == 2){
             this.range.add(new int[] {X+2,Y-1});
         }
         // 2-down/1-right
-        if(getPiece(X + 1, Y - 2, arr) == 0 || getPiece(X + 1, Y - 2, arr) == 1){
+        if(getPiece(X + 1, Y - 2, arr) == 0 || getPiece(X + 1, Y - 2, arr) == 2){
             this.range.add(new int[] {X+1,Y-2});
         }
         // 2-down/1-left
-        if(getPiece(X - 1, Y - 2, arr) == 0 || getPiece(X - 1, Y - 2, arr) == 1){
+        if(getPiece(X - 1, Y - 2, arr) == 0 || getPiece(X - 1, Y - 2, arr) == 2){
             this.range.add(new int[] {X-1,Y-2});
         }
         // 1-down/2-left
-        if(getPiece(X - 2, Y - 1, arr) == 0 || getPiece(X - 2, Y - 1, arr) == 1){
+        if(getPiece(X - 2, Y - 1, arr) == 0 || getPiece(X - 2, Y - 1, arr) == 2){
             this.range.add(new int[] {X-2,Y-1});
         }
         // 1-up/2-left
-        if(getPiece(X - 2, Y + 1, arr) == 0 || getPiece(X - 2, Y + 1, arr) == 0){
+        if(getPiece(X - 2, Y + 1, arr) == 0 || getPiece(X - 2, Y + 1, arr) == 2){
             this.range.add(new int[] {X-2,Y+1});
         }
         // 2-up/1-left
-        if(getPiece(X - 1, Y + 2, arr) == 0 || getPiece(X - 1, Y + 2, arr) == 0){
+        if(getPiece(X - 1, Y + 2, arr) == 0 || getPiece(X - 1, Y + 2, arr) == 2){
             this.range.add(new int[] {X-1,Y+2});
         }
 
