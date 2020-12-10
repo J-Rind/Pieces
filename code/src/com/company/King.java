@@ -6,7 +6,7 @@ class King extends Piece {
     public King(int x, int y, String t, Boolean white) {
         super(x, y, t, white);
     }
-
+    public int pMove = 0;
     // Params:
     // ArrayList<Piece> pieces: An ArrayList of all the pieces on the board
     // Desc:
@@ -69,5 +69,40 @@ class King extends Piece {
             }
         }
         return check;
+    }
+
+    @Override
+    public void moveTo(int x, int y, King myKing, ArrayList<Piece> arr){
+
+        int[] myCoords = new int[]{this.getX(), this.getY()};
+        int moved = 0;
+
+        updateRange(arr);
+
+        for (int[] coordinate : this.range) {
+            if (coordinate[0] == x && coordinate[1] == y) {
+                this.setX(x);
+                this.setY(y);
+                System.out.println("Piece Moved to: (" + x + "," + y + ")");
+                this.pMove++;
+                moved++;
+                break;
+            }
+        }
+
+        updateRange(arr);
+
+        if (myKing.kingCheck(arr) == true)
+        {
+            System.out.println("!! king is in check, moving piece back !!");
+            this.setX(myCoords[0]);
+            this.setY(myCoords[1]);
+            this.pMove--;
+        }
+
+        if(moved != 1)
+        {
+            System.out.println("piece not moved, not in range");
+        }
     }
 }
