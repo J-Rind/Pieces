@@ -20,12 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3cac255f-897f-4a51-a8c0-1f36795a2d42" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/company/Bishop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/Knight.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/Pawn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/Queen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Piece.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

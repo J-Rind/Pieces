@@ -6,7 +6,7 @@ public class Piece {
     private int X;
     private int Y;
     private String name;
-    private Boolean isAlive;
+    public static Boolean isAlive;
     private Boolean isWhite;
     public ArrayList<int[]> range = new ArrayList<>();
 
