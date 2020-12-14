@@ -22,9 +22,12 @@ public class Main {
 //        Knight whiteKnight2 = new Knight(6,0,"WhiteKnight2",true);
 //        Knight blackKnight1 = new Knight(1,7,"BlackKnight1",false);
 //        Knight blackKnight2 = new Knight(6,7,"BlackKnight2",false);
-        Pawn blackPawn1 = new Pawn(6,6,"BlackPawn1",false);
+        Pawn blackPawn1 = new Pawn(2,2,"BlackPawn1",false);
         Pawn whitePawn1 = new Pawn(1,1,"WhitePawn1",true);
-        Bishop blackBishop1 = new Bishop(3,0,"BlackBishop1",false);
+        Pawn whitePawn2 = new Pawn(3,3,"WhitePawn1",true);
+        Pawn whitePawn3 = new Pawn(3,1,"WhitePawn1",true);
+        Pawn whitePawn4 = new Pawn(1,3,"WhitePawn1",true);
+//      Bishop blackBishop1 = new Bishop(3,0,"BlackBishop1",false);
 
 
 
@@ -37,8 +40,11 @@ public class Main {
 //        pieces.add(whiteKnight1);
 //        pieces.add(whiteKnight2);
         pieces.add(whitePawn1);
+        pieces.add(whitePawn2);
+        pieces.add(whitePawn3);
+        pieces.add(whitePawn4);
         pieces.add(blackPawn1);
-        pieces.add(blackBishop1);
+//        pieces.add(blackBishop1);
 
         Piece.updateRange(pieces);
 
@@ -77,11 +83,15 @@ public class Main {
         wRook2.moveTo(5,0,wKing,pieces);
         bKing.moveTo(5,7,bKing,pieces);*/
 
-        blackBishop1.moveTo(0,3,bKing,pieces);
-        blackBishop1.moveTo(3,6,bKing,pieces);
-        wKing.moveTo(2,0,wKing,pieces);
+//        blackBishop1.moveTo(0,3,bKing,pieces);
+//        blackBishop1.moveTo(3,6,bKing,pieces);
+//        blackPawn1.moveTo(6,1,bKing,pieces);
+//        wKing.moveTo(6,0,wKing,pieces);
 
-
+blackPawn1.moveTo(3,1,bKing,pieces);
+if(wKing.kingCheck(pieces)){
+    System.out.println("White king in Check!");
+}
 
 
 
