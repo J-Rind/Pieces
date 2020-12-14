@@ -63,6 +63,14 @@ public class Pawn extends Piece {
                         break;
                     }
                 }
+                // Up-Right
+                if (this.getPiece(X + 1, Y + 1, arr) == 2){
+                    this.range.add (new int [] {X+1, Y+1});
+                }
+                // Up-Left
+                if (this.getPiece(X - 1, Y + 1, arr) == 2){
+                    this.range.add (new int [] {X-1, Y+1});
+                }
             }else if (!this.getColor()) {
                 for (int x = X, y = Y-1; y >= Y - 2; y-- ) {
                     if (getPiece(x, y, arr) == 0) {
@@ -71,35 +79,43 @@ public class Pawn extends Piece {
                         break;
                     }
                 }
+                // Down-Right
+                if (this.getPiece(X + 1, Y - 1, arr) == 2){
+                    this.range.add (new int [] {X+1, Y-1});
+                }
+                // Down-Left
+                if (this.getPiece(X - 1, Y - 1, arr) == 2){
+                    this.range.add (new int [] {X-1, Y-1});
+                }
             }
         }
         else {
             if (this.getColor()){
                 // Up-Right
                 if (this.getPiece(X + 1, Y + 1, arr) == 2){
-                    this.range.add (new int [] {X, Y});
+                    this.range.add (new int [] {X+1, Y+1});
                 }
                 // Up-Left
                 if (this.getPiece(X - 1, Y + 1, arr) == 2){
-                    this.range.add (new int [] {X, Y});
+                    this.range.add (new int [] {X-1, Y+1});
                 }
                 // Up
                 if (this.getPiece(X, Y + 1, arr) == 0){
-                    this.range.add (new int [] {X, Y});
+                    this.range.add (new int [] {X, Y+1});
                 }
             }
             else if (!this.getColor()){
                 // Down-Right
                 if (this.getPiece(X + 1, Y - 1, arr) == 2){
-                    this.range.add (new int [] {X, Y});
+                    this.range.add (new int [] {X+1, Y-1});
                 }
                 // Down-Left
                 if (this.getPiece(X - 1, Y - 1, arr) == 2){
-                    this.range.add (new int [] {X, Y});
+                    this.range.add (new int [] {X-1, Y-1});
                 }
                 // Down
-                if (this.getPiece(X, Y + 1, arr) == 0){
-                    this.range.add (new int [] {X, Y});
+                if (this.getPiece(X, Y - 1, arr) == 0){
+                    this.range.add (new int [] {X, Y-1});
                 }
             }
         }

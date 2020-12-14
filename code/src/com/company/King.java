@@ -6,7 +6,7 @@ class King extends Piece {
     public King(int x, int y, String t, Boolean white) {
         super(x, y, t, white);
     }
-    public int pMove = 0; // Required for castling, piece cannot have moved
+    public int pMove = 0; // Required for castling, piece cannot have moved; 0 = false; >0 = true;
 
     // Params:
     // ArrayList<Piece> pieces: An ArrayList of all the pieces on the board
@@ -101,13 +101,11 @@ class King extends Piece {
                             if (piece.getColor() == this.getColor()) {
                                 if ((x < this.getX()) && (piece.getX() < this.getX())) {
                                     doCastling(arr, (Rook)piece); // Cast Rook onto piece because we know it is a Rook
-                                    this.pMove++;
                                     moved++;
                                     break;
                                 }
                                 else if ((x > this.getX()) && (piece.getX() > this.getX())) {
                                     doCastling(arr, (Rook)piece); // Cast Rook onto piece because we know it is a Rook
-                                    this.pMove++;
                                     moved++;
                                     break;
                                 }
