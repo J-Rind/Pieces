@@ -22,7 +22,7 @@ public class Pawn extends Piece {
             if (coordinate[0] == x && coordinate[1] == y) {
                 this.setX(x);
                 this.setY(y);
-                System.out.println("Piece Moved to: (" + x + "," + y + ")");
+                System.out.println(this.getName() + " Moved to: (" + this.getX() + "," + this.getY() + ")");
                 this.pMove++;
                 moved++;
                 break;
