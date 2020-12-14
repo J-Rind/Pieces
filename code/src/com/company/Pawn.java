@@ -8,6 +8,42 @@ public class Pawn extends Piece {
     public Pawn(int x, int y, String t, Boolean white) {
         super(x, y, t, white);
     }
+    public int pMove = 0;
+
+    @Override
+    public void moveTo(int x, int y, King myKing, ArrayList<Piece> arr){
+
+        int[] myCoords = new int[]{this.getX(), this.getY()};
+        int moved = 0;
+
+        updateRange(arr);
+
+        for (int[] coordinate : this.range) {
+            if (coordinate[0] == x && coordinate[1] == y) {
+                this.setX(x);
+                this.setY(y);
+                System.out.println(this.getName() + " Moved to: (" + this.getX() + "," + this.getY() + ")");
+                this.pMove++;
+                moved++;
+                break;
+            }
+        }
+
+        updateRange(arr);
+
+        if (myKing.kingCheck(arr) == true)
+        {
+            System.out.println("!! king is in check, moving piece back !!");
+            this.setX(myCoords[0]);
+            this.setY(myCoords[1]);
+            this.pMove--;
+        }
+
+        if(moved != 1)
+        {
+            System.out.println("piece not moved, not in range");
+        }
+    }
 
     @Override
     public void getRange(ArrayList<Piece> arr){
@@ -18,17 +54,17 @@ public class Pawn extends Piece {
         int moved = 0;
 
         // Moving 2 spaces for first move
-        if (moved != 0){                //??If piece has not been moved
+        if (pMove == 0){                //??If piece has not been moved
             if (this.getColor()) {
-                for (int x = X, y = Y + 1; y <= y + 2; y++) {
+                for (int x = X, y = Y + 1; y <= Y + 2; y++) {
                     if (getPiece(x, y, arr) == 0) {
                         this.range.add(new int[]{x, y});
                     } else if (getPiece(x, y, arr) == 1 || getPiece(x, y, arr) == 2) {
                         break;
                     }
                 }
-            }else if (this.getColor() == false) {
-                for (int x = X, y = Y; y <= y - 2; y-- ) {
+            }else if (!this.getColor()) {
+                for (int x = X, y = Y-1; y >= Y - 2; y-- ) {
                     if (getPiece(x, y, arr) == 0) {
                         this.range.add(new int[]{x, y});
                     } else if (getPiece(x, y, arr) == 1 || getPiece(x, y, arr) == 2) {

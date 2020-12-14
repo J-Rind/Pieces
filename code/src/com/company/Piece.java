@@ -6,7 +6,7 @@ public class Piece {
     private int X;
     private int Y;
     private String name;
-    private Boolean isAlive;
+    public static Boolean isAlive;
     private Boolean isWhite;
     public ArrayList<int[]> range = new ArrayList<>();
 
@@ -23,7 +23,7 @@ public class Piece {
     Piece()
     {}
 
-    public void updateRange(ArrayList<Piece> arr){
+    public static void updateRange(ArrayList<Piece> arr){
         for(int i = 0;i < arr.size(); i++){
             arr.get(i).getRange(arr);
         }
@@ -40,7 +40,7 @@ public class Piece {
             if (coordinate[0] == x && coordinate[1] == y) {
                 this.setX(x);
                 this.setY(y);
-                System.out.println("Piece Moved to: (" + x + "," + y + ")");
+                System.out.println(this.getName() + " Moved to: (" + this.getX() + "," + this.getY() + ")");
 
                 moved++;
                 break;
