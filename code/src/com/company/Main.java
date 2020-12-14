@@ -23,7 +23,7 @@ public class Main {
 //        Knight blackKnight1 = new Knight(1,7,"BlackKnight1",false);
 //        Knight blackKnight2 = new Knight(6,7,"BlackKnight2",false);
         Pawn blackPawn1 = new Pawn(2,2,"BlackPawn1",false);
-        Pawn whitePawn1 = new Pawn(1,1,"WhitePawn1",true);
+        Pawn whitePawn1 = new Pawn(1,5,"WhitePawn1",true);
         Pawn whitePawn2 = new Pawn(3,3,"WhitePawn1",true);
         Pawn whitePawn3 = new Pawn(3,1,"WhitePawn1",true);
         Pawn whitePawn4 = new Pawn(1,3,"WhitePawn1",true);
@@ -87,7 +87,8 @@ public class Main {
 //        blackBishop1.moveTo(3,6,bKing,pieces);
 //        blackPawn1.moveTo(6,1,bKing,pieces);
 //        wKing.moveTo(6,0,wKing,pieces);
-
+whitePawn1.moveTo(1,6,wKing,pieces);
+bKing.moveTo(2,7,bKing,pieces);
 blackPawn1.moveTo(3,1,bKing,pieces);
 if(wKing.kingCheck(pieces)){
     System.out.println("White king in Check!");
