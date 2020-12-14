@@ -20,34 +20,42 @@ class King extends Piece {
 
         // getPiece: 0 = empty; 1 = same color; 2 = opposite color
         //Up
+        if(pieceX < 8 && pieceY+1 < 8 && pieceX > -1 && pieceY+1 > -1)
         if (this.getPiece(pieceX, pieceY+1, pieces) == 0 || this.getPiece(pieceX, pieceY+1, pieces) == 2)
             this.range.add(new int[] {pieceX, pieceY+1}); // Return int[] of tested coordinates
 
         //Up-right
+        if(pieceX+1 < 8 && pieceY+1 < 8 && pieceX+1 > -1 && pieceY+1 > -1)
         if (this.getPiece(pieceX+1, pieceY+1, pieces) == 0 || this.getPiece(pieceX+1, pieceY+1, pieces) == 2)
             this.range.add(new int[] {pieceX+1, pieceY+1}); // Return int[] of tested coordinates
 
         //Right
+        if(pieceX+1 < 8 && pieceY < 8 && pieceX+1 > -1 && pieceY > -1)
         if (this.getPiece(pieceX+1, pieceY, pieces) == 0 || this.getPiece(pieceX+1, pieceY, pieces) == 2)
             this.range.add(new int[] {pieceX+1, pieceY}); // Return int[] of tested coordinates
 
         //Down-right
+        if(pieceX+1 < 8 && pieceY-1 < 8 && pieceX+1 > -1 && pieceY-1 > -1)
         if (this.getPiece(pieceX+1, pieceY-1, pieces) == 0 || this.getPiece(pieceX+1, pieceY-1, pieces) == 2)
             this.range.add(new int[] {pieceX+1, pieceY-1}); // Return int[] of tested coordinates
 
         //Down
+        if(pieceX < 8 && pieceY-1 < 8 && pieceX > -1 && pieceY-1 > -1)
         if (this.getPiece(pieceX, pieceY-1, pieces) == 0 || this.getPiece(pieceX, pieceY-1, pieces) == 2)
             this.range.add(new int[] {pieceX, pieceY-1}); // Return int[] of tested coordinates
 
         //Down-left
+        if(pieceX-1 < 8 && pieceY-1 < 8 && pieceX-1 > -1 && pieceY-1 > -1)
         if (this.getPiece(pieceX-1, pieceY-1, pieces) == 0 || this.getPiece(pieceX-1, pieceY-1, pieces) == 2)
             this.range.add(new int[] {pieceX-1, pieceY-1}); // Return int[] of tested coordinates
 
         //Left
+        if(pieceX-1 < 8 && pieceY < 8 && pieceX-1 > -1 && pieceY > -1)
         if (this.getPiece(pieceX-1, pieceY, pieces) == 0 || this.getPiece(pieceX-1, pieceY, pieces) == 2)
             this.range.add(new int[] {pieceX-1, pieceY}); // Return int[] of tested coordinates
 
         //Up-left
+        if(pieceX-1 < 8 && pieceY+1 < 8 && pieceX-1 > -1 && pieceY+1 > -1)
         if (this.getPiece(pieceX-1, pieceY+1, pieces) == 0 || this.getPiece(pieceX-1, pieceY+1, pieces) == 2)
             this.range.add(new int[] {pieceX-1, pieceY+1}); // Return int[] of tested coordinates
 
@@ -100,7 +108,7 @@ class King extends Piece {
                         if (piece instanceof Rook) { // If the piece is a Rook
                             if (piece.getColor() == this.getColor()) {
                                 if ((x < this.getX()) && (piece.getX() < this.getX())) {
-                                    doCastling(arr, (Rook)piece); // Cast Rook onto piece because we know it is a Rook
+                                    if(doCastling(arr, (Rook)piece)) // Cast Rook onto piece because we know it is a Rook
                                     moved++;
                                     break;
                                 }
@@ -125,7 +133,7 @@ class King extends Piece {
 
         updateRange(arr);
 
-        if (myKing.kingCheck(arr) == true)
+        if (myKing.kingCheck(arr) == true && moved == 1)
         {
             System.out.println("!! king is in check, moving piece back !!");
             this.setX(myCoords[0]);
@@ -178,7 +186,7 @@ class King extends Piece {
                 break;
             }
 
-        } while (x != targetX);
+        } while (x != (targetX+step)); // CC - Fixed to check target square before check is done
         setX(orgX);
         return !checked;
     }
