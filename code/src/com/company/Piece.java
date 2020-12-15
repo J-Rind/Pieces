@@ -3,14 +3,14 @@ import java.util.ArrayList;
 
 
 public class Piece {
-    private int X;
-    private int Y;
-    private String name;
-    public static Boolean isAlive;
-    private Boolean isWhite;
-    public ArrayList<int[]> range = new ArrayList<>();
+    private int X; //x coordinate
+    private int Y; // y coordinate
+    private String name; //just a string for naming conventions, this is unused in our code
+    public static Boolean isAlive; //true = alive, false = dead. this is unused in our code
+    private Boolean isWhite; //true = white, false = blace
+    public ArrayList<int[]> range = new ArrayList<>(); //arraylist of integers that define the pieces range
 
-    Piece(int x, int y, String t, Boolean white)
+    Piece(int x, int y, String t, Boolean white) //constructor
     {
         X = x;
         Y = y;
@@ -20,15 +20,22 @@ public class Piece {
         range = new ArrayList<>();
     }
 
-    Piece()
+    Piece() //default constructor, for testing
     {}
 
+
+    //parameters: arraylist of alive pieces
+    //summary: iterates through list, calls getrange for each
+    //output: N/A
     public static void updateRange(ArrayList<Piece> arr){
         for(int i = 0;i < arr.size(); i++){
             arr.get(i).getRange(arr);
         }
     }
 
+    //parameters: destination x and y, king of the same color, arraylist of alive pieces
+    //summary: updates range for all pieces > check to see if destination is in range > checks to see if king is in range for any ene pieces > sets current coordinates if applicable.
+    //output: N/A
     public void moveTo(int x, int y, King myKing, ArrayList<Piece> arr){
 
         int[] myCoords = new int[]{this.getX(), this.getY()};
@@ -65,10 +72,19 @@ public class Piece {
 
     } //function should change piece coordinates after error checking*/
 
+    //parameters: arraylist of alive pieces
+    //summary: overloaded function, see each piece
+    //output: N/A
     public void getRange(ArrayList<Piece> arr){};
 
+    //parameters: arraylist of alive pieces
+    //summary: overloaded function, see king piece
+    //output:
     public boolean kingCheck(){return true;} //returns if this move will place the current player's king in check.
 
+    //parameters: N/A
+    //summary: just a print function
+    //output: N/A
     public void print(){
         System.out.println("Coordinate: (" + X + "," + Y + ")");
         System.out.println("isWhite: " + isWhite);
@@ -79,6 +95,9 @@ public class Piece {
 
     }
 
+    //parameters: x and y coordinates, arraylist of alive pieces
+    //summary: checks to see if a piece is on the destination coordinates
+    //output: 0 = empty space, 1 = piece of same color, 2 = piece of opposite color
     public int getPiece(int dX, int dY,ArrayList<Piece> arr)
     {
         for (int i =0; i < arr.size(); i++){
