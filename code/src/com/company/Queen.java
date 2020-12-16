@@ -9,6 +9,11 @@ public class Queen extends Piece {
         super(x, y, t, white);
     }
 
+    //parameters: arraylist of alive pieces
+    //summary: clear range > iterate through each space the piece should be able to move to > add coordinates to range if empty
+    //         add coordinate if enemy piece, end loop > end loop if friendly piece > end loop if out of board range
+    //output: N/A
+    //Note - this is the logic for the pieces, range determines valid moves, each piece is different with the only differnce being the spaces being checked and added
     @Override
     public void getRange(ArrayList<Piece> arr){
         this.range.clear();
