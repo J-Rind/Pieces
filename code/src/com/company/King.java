@@ -176,6 +176,7 @@ class King extends Piece {
 
         int x = orgX;
         boolean checked = false;
+        if (step == -1) {
         do
         {
             x += step;
@@ -187,6 +188,19 @@ class King extends Piece {
             }
 
         } while (x != (targetX+step)); // CC - Fixed to check target square before check is done
+        } else if (step == 1) {
+        do
+        {
+            x += step;
+            setX(x);
+            if (kingCheck(pieces))
+            {
+                checked = true;
+                break;
+            }
+
+        } while (x != (targetX));
+        }
         setX(orgX);
         return !checked;
     }
